@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import { Input } from '../src/components/Forms'
+import Header from '../src/components/header/index'
+import Button from '../src/components/Button'
+
+import { LoginContainer, Form, ErrorLabel, BlockFieldContainer } from '../src/page/styles'
+import Select from '../src/components/Forms/SelectInput'
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Header></Header>
+    <LoginContainer>
+      <Form style={{ width: '400px' }} onSubmit={console.log}>
+       {/* <FormLogo src={LogoImage} alt="Educat Logo" title="Educat Logo" /> */}
+        <BlockFieldContainer>
+          <label htmlFor="provider">:</label>
+          <Select name="provider">
+            <option key="-1" value="-1" selected>
+              Selecione
+            </option>
+          </Select>
+        </BlockFieldContainer>
+        <BlockFieldContainer>
+          <label htmlFor="provider">:</label>
+          <Select name="provider">
+            <option key="-1" value="-1" selected>
+              Selecione
+            </option>
+          </Select>
+        </BlockFieldContainer>
+        <BlockFieldContainer>
+          <label htmlFor="provider">:</label>
+          <Select name="provider">
+            <option key="-1" value="-1" selected>
+              Selecione
+            </option>
+          </Select>
+        </BlockFieldContainer>
+        <Button type="submit" label="Entrar"/>
+      </Form>
+    </LoginContainer>
+</>
+  )
 }
 
-export default App;
+export default App
